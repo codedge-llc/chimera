@@ -53,7 +53,7 @@ iex> Profile.new(user, map: [name: nil])
 Specify a function of arity 1 that takes the source struct as
 a parameter:
 
-```
+```elixir
 iex> user = %User{id: 1234, name: "Person", email: "person@example.com"}
 iex> Profile.new(user, map: [name: fn user -> String.upcase(user.email) end])
 %Profile{id: 1234, name: "PERSON", avatar: nil}
