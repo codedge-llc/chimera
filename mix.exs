@@ -9,8 +9,17 @@ defmodule Chimera.MixProject do
       version: @version,
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
+      source_url: "https://github.com/codedge-llc/chimera",
+      description: description(),
+      package: package(),
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      docs: [
+        main: "readme",
+        extras: [
+          "README.md"
+        ]
+      ]
     ]
   end
 
@@ -24,6 +33,26 @@ defmodule Chimera.MixProject do
   end
 
   defp deps do
-    []
+    [
+      {:earmark, "~> 1.0", only: :dev},
+      {:ex_doc, "~> 0.2", only: :dev},
+      {:excoveralls, "~> 0.5", only: :test},
+      {:credo, "~> 0.8", only: [:dev, :test], runtime: false}
+    ]
+  end
+
+  defp description do
+    """
+    Dead-simple conversion between structs
+    """
+  end
+
+  defp package do
+    [
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
+      maintainers: ["Henry Popp"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/codedge-llc/chimera"}
+    ]
   end
 end

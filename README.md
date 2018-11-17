@@ -30,11 +30,10 @@ defmodule Profile do
   use Chimera
 end
 
+iex> User.new(id: 1234, name: "Person")
+%User{id: 1234, name: "Person", email: nil}
+
 iex> user = %User{id: 1234, name: "Person", email: "person@example.com"}
 iex> Profile.new(user)
 %Profile{id: 1234, name: "Person", avatar: nil}
-
-iex> profile = %Profile{id: 1234, name: "Person", avatar: "https://picsum.photos/200"}
-iex> User.new(profile)
-%User{id: 1234, name: "Person", email: nil}
 ```
