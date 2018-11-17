@@ -37,3 +37,24 @@ iex> user = %User{id: 1234, name: "Person", email: "person@example.com"}
 iex> Profile.new(user)
 %Profile{id: 1234, name: "Person", avatar: nil}
 ```
+
+## Custom Mappings
+
+Use the optional `:map` argument to specify custom key mappings.
+`:map` is a keyword list whose keys correspond to the keys of
+the destination struct.
+
+```elixir
+iex> user = %User{id: 1234, name: "Person", email: "person@example.com"}
+iex> Profile.new(user, map: [name: nil])
+%Profile{id: 1234, name: nil, avatar: nil}
+```
+
+Specify a function of arity 1 that takes the source struct as
+a parameter:
+
+```
+iex> user = %User{id: 1234, name: "Person", email: "person@example.com"}
+iex> Profile.new(user, map: [name: fn user -> String.upcase(user.email) end])
+%Profile{id: 1234, name: "PERSON", avatar: nil}
+```

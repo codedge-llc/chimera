@@ -17,9 +17,15 @@ defmodule Chimera do
 
       defp mapper(to, from, []), do: to
 
-      defp mapper(to, from, [{key, fun} | rest]) do
+      defp mapper(to, from, [{key, fun} | rest]) when is_function(fun) do
         to
         |> Map.put(key, fun.(from))
+        |> mapper(from, rest)
+      end
+
+      defp mapper(to, from, [{key, val} | rest]) do
+        to
+        |> Map.put(key, val)
         |> mapper(from, rest)
       end
 
