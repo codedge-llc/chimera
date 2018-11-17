@@ -7,7 +7,7 @@ defmodule Chimera.MixProject do
     [
       app: :chimera,
       version: @version,
-      elixir: "~> 1.7",
+      elixir: "~> 1.6",
       elixirc_paths: elixirc_paths(Mix.env()),
       source_url: "https://github.com/codedge-llc/chimera",
       description: description(),

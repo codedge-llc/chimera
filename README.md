@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/codedge-llc/chimera.svg?branch=master)](https://travis-ci.org/codedge-llc/chimera)
+[![Hex.pm](http://img.shields.io/hexpm/v/chimera.svg)](https://hex.pm/packages/chimera)
+[![Hex.pm](http://img.shields.io/hexpm/dt/chimera.svg)](https://hex.pm/packages/chimera)
+
 # Chimera
 
 Dead-simple conversion between Elixir structs
