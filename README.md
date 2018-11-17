@@ -20,7 +20,7 @@ end
 
 ## Usage
 
-Add `use Chimera` to your struct's module. It adds a `new/1` function
+Add `use Chimera` to your struct's module. It adds `new/1` and `new/2` functions
 that will create a new struct from any given map, struct or keyword list.
 
 ```elixir
