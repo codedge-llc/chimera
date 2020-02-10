@@ -43,7 +43,7 @@ defmodule Chimera do
         end
 
         def slice(map) do
-          {:ok, map_size(map), &Enumerable.List.slice(:maps.to_list(map), &1, &2)}
+          {:ok, map_size(map), &Enum.slice(:maps.to_list(map), &1, &2)}
         end
 
         def reduce(map, acc, fun) do

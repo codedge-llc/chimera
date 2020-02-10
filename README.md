@@ -13,7 +13,7 @@ Add chimera as a mix.exs dependency:
 ```elixir
 def deps do
   [
-    {:chimera, "~> 0.1.0"}
+    {:chimera, "~> 0.3.0"}
   ]
 end
 ```
